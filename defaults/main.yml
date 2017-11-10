@@ -1,10 +1,19 @@
+# Blazegraph version
 blazegraph_version: 2.1.4
+# User to install with
 blazegraph_user: tomcat8
+# Where to install to
 blazegraph_home_dir: /opt/blazegraph
-blazegraph_war_path: "{{ tomcat8_home }}/webapps/bigdata.war"
+# Servlet container home directory
+blazegraph_tomcat_home: /var/lib/tomcat8
+# Path to install the WAR to
+blazegraph_war_path: "{{ blazegraph_tomcat_home }}/webapps/bigdata.war"
+# Log4J template file
 blazegraph_log4j_template: log4j.properties
+# Log directory
 blazegraph_log_dir: /var/log/tomcat8/blazegraph
-blazegraph_log4j_path: "{{ tomcat8_home }}/webapps/bigdata/WEB-INF/classes/log4j.properties"
+# Path to install the log4k settings to
+blazegraph_log4j_path: "{{ blazegraph_tomcat_home }}/webapps/bigdata/WEB-INF/classes/log4j.properties"
 
 # -- All of these are properties that go into RWStore.properties
 ##
