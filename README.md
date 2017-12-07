@@ -32,13 +32,17 @@ There are additional configuration options available and documented in [defaults
 
 ## Dependencies
 
-* Tomcat 8
+This expects an Apache Tomcat container to install into. This role should also handle a notification "restart tomcat8". We recommend the following.
+
+* Islandora-Devops.tomcat8
+     * [Github](https://github.com/Islandora-Devops/ansible-role-tomcat8)
+     * [Galaxy](https://galaxy.ansible.com/Islandora-Devops/tomcat8/)
   
 ## Example Playbook
 
     - hosts: webservers
       roles:
-        - { role: islandora.blazegraph }
+        - { role: Islandora-Devops.blazegraph }
 
 ## License
 

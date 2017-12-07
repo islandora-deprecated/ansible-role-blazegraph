@@ -1,17 +1,27 @@
 ---
 
+- name: "Wait for Blazegraph to come up"
+  uri:
+    url: "{{ blazegraph_hostname }}/#namespaces"
+    status_code: 200
+    timeout: 5
+  register: result
+  until: result.status == 200
+  retries: 60
+  delay: 5
+
 - name: Setup namespace in blazegraph
   command:
-    curl -v -X POST -H 'Content-Type:text/plain' --data-binary @blazegraph.properties http://localhost:8080/bigdata/namespace
+    curl -v -X POST -H 'Content-Type:text/plain' --data-binary @blazegraph.properties {{ blazegraph_hostname }}/namespace
   args:
     chdir: "{{ blazegraph_home_dir }}/conf"
     warn: no
-  when: blazegraph_war_download.changed is defined and blazegraph_war_download.changed
+  when: blazegraph_war_download.changed is defined and blazegraph_war_download.changed and result.status == 200
 
 - name: Setup inference in blazegraph
   command:
-    curl -v -X POST -H 'Content-Type:text/plain' --data-binary @inference.nt http://localhost:8080/bigdata/namespace/islandora/sparql
+    curl -v -X POST -H 'Content-Type:text/plain' --data-binary @inference.nt {{blazgraph_hostname }}/namespace/islandora/sparql
   args:
     chdir: "{{ blazegraph_home_dir }}/conf"
     warn: no
-  when: blazegraph_war_download.changed is defined and blazegraph_war_download.changed
+  when: blazegraph_war_download.changed is defined and blazegraph_war_download.changed and result.status == 200
