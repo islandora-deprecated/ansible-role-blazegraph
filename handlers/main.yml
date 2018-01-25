@@ -1,0 +1,16 @@
+---
+
+- name: tomcat8 restart tomcat8
+  service:
+    name: tomcat8
+    state: restarted
+  listen: "restart tomcat8"
+  when: ansible_os_family == "Debian"
+
+- name: tomcat8 restart
+  service:
+   name: tomcat8
+   state: restarted
+  sudo: True
+  listen: "restart tomcat8"
+  when: ansible_os_family == "RedHat"
