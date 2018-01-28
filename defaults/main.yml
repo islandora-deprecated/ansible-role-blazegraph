@@ -14,6 +14,8 @@ blazegraph_log4j_template: log4j.properties
 blazegraph_log_dir: /var/log/tomcat8/blazegraph
 # Path to install the log4k settings to
 blazegraph_log4j_path: "{{ blazegraph_tomcat_home }}/webapps/bigdata/WEB-INF/classes/log4j.properties"
+# Path to install the RWStore.properties
+blazegraph_RWStore_path: "{{ blazegraph_tomcat_home }}/webapps/bigdata/WEB-INF/classes/"
 # Blazegraph hostname and context (if required)
 blazegraph_hostname: http://localhost:8080/bigdata
 
