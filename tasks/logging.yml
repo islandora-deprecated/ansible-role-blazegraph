@@ -11,4 +11,4 @@
     dest: "{{blazegraph_log4j_path}}"
     owner: "{{ blazegraph_user }}"
     group: "{{ blazegraph_user }}"
-  register: restart tomcat8
+  notify: restart tomcat8
