@@ -1,4 +1,4 @@
-# Ansible Role: Blazegraph
+# Ansible Role: Blazegraph [![Build Status](https://travis-ci.org/Islandora-Devops/ansible-role-blazegraph.svg?branch=master)](https://travis-ci.org/Islandora-Devops/ansible-role-blazegraph)
 
 An Ansible role that installs [Blazegraph](https://www.blazegraph.com/) in a Karaf container on:
 
@@ -32,17 +32,25 @@ There are additional configuration options available and documented in [defaults
 
 ## Dependencies
 
-This expects an Apache Tomcat container to install into. This role should also handle a notification "restart tomcat8". We recommend the following.
+This expects an Apache Tomcat container to install into. 
 
+This role should also handle a notification "restart tomcat8". 
+
+We recommend the following:
 * Islandora-Devops.tomcat8
      * [Github](https://github.com/Islandora-Devops/ansible-role-tomcat8)
      * [Galaxy](https://galaxy.ansible.com/Islandora-Devops/tomcat8/)
   
+In order for blazegraph to find its configuration files you have two options: 
+* Specify it in the blazegraph web.xml file:
+  * This can be done automatically the role be specifying `blazegraph_webxml_template: yes` (default)
+* Set the blazegraph options in your `JAVA_OPTS` environment variable. How to do this depends on the role. An example using Islandora-Devops.tomcat8 can be found [here](tests/java_opts.yml).
+
 ## Example Playbook
 
-    - hosts: webservers
-      roles:
-        - { role: Islandora-Devops.blazegraph }
+There are two examples depending how the configuration infomration is passed to blazegraph: 
+* [Using JAVA_OPTS](tests/java_opts.yml)
+* [Using web.xml](tests/web_xml.yml)
 
 ## License
 

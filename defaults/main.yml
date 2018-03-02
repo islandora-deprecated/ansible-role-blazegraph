@@ -5,6 +5,8 @@ blazegraph_war_path: "{{ tomcat8_home }}/webapps/bigdata.war"
 blazegraph_log4j_template: log4j.properties
 blazegraph_log_dir: /var/log/tomcat8/blazegraph
 blazegraph_log4j_path: "{{ tomcat8_home }}/webapps/bigdata/WEB-INF/classes/log4j.properties"
+blazegraph_webxml_path: "{{ tomcat8_home }}/webapps/bigdata/WEB-INF/web.xml"
+blazegraph_webxml_template: yes
 
 # -- All of these are properties that go into RWStore.properties
 ##

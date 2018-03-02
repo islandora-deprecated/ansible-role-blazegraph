@@ -5,11 +5,6 @@
     - blazegraph
     - blazegraph-install
 
-- include: config.yml
-  tags:
-    - blazegraph
-    - blazegraph-config
-
 - include: download.yml
   tags:
     - blazegraph
@@ -19,6 +14,11 @@
   tags:
     - blazegraph
     - blazegraph-logging
+
+- include: config.yml
+  tags:
+    - blazegraph
+    - blazegraph-config
 
 - include: namespace.yml
   tags:
