@@ -8,7 +8,7 @@
 
 - name: "Wait for Blazegraph to come up"
   uri:
-    url: "http://localhost:8080/bigdata/#namespaces"
+    url: "{{ alpaca_triplestore_base_url }}/#namespaces"
     status_code: 200
     timeout: 5
   register: result
@@ -18,7 +18,7 @@
 
 - name: Setup namespace in blazegraph
   uri:
-    url: http://localhost:8080/bigdata/namespace
+    url: "{{ alpaca_triplestore_base_url }}/namespace"
     method: POST
     body: "{{ lookup('file', 'blazegraph.properties') }}"
     status_code: 201
@@ -28,7 +28,7 @@
 
 - name: Setup inference in blazegraph
   uri:
-    url: http://localhost:8080/bigdata/namespace/islandora/sparql
+    url: "{{ alpaca_triplestore_base_url }}/namespace/{{ triplestore_namespace }}/sparql"
     method: POST
     body: "{{ lookup('file', 'inference.nt') }}"
     status_code: 200
