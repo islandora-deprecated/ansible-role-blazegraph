@@ -54,3 +54,7 @@ blazegraph_config_namespace_kb_spo_blazegraph_config_btree_BTree_branchingFactor
 # the workbench "Performance" tab_
 #
 blazegraph_config_journal_Journal_collectPlatformStatistics: "false"
+
+
+triplestore_namespace: islandora
+alpaca_triplestore_base_url: "http://{{ hostvars[groups['tomcat'][0]].ansible_host  }}:8080/bigdata"
