@@ -2,7 +2,7 @@
 
 - name: Download blazegraph war
   get_url:
-    url: http://repo1.maven.org/maven2/com/blazegraph/bigdata-war/{{ blazegraph_version }}/bigdata-war-{{ blazegraph_version }}.war
+    url: https://repo1.maven.org/maven2/com/blazegraph/bigdata-war/{{ blazegraph_version }}/bigdata-war-{{ blazegraph_version }}.war
     dest: "{{ blazegraph_war_path }}"
     owner: "{{ blazegraph_user }}"
     group: "{{ blazegraph_user }}"
