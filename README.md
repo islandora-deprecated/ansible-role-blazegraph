@@ -1,4 +1,4 @@
-# Ansible Role: Blazegraph [![Build Status](https://travis-ci.org/Islandora-Devops/ansible-role-blazegraph.svg?branch=master)](https://travis-ci.org/Islandora-Devops/ansible-role-blazegraph)
+# Ansible Role: Blazegraph [![Build Status](https://travis-ci.org/Islandora-Devops/ansible-role-blazegraph.svg?branch=main)](https://travis-ci.org/Islandora-Devops/ansible-role-blazegraph)
 
 An Ansible role that installs [Blazegraph](https://www.blazegraph.com/) in a Karaf container on:
 
