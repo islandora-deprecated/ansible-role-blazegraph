@@ -3,8 +3,8 @@ services: docker
 
 env:
 # - distro: centos7
-  - distro=ubuntu1604 playbook=web_xml.yml
-  - distro=ubuntu1604 playbook=java_opts.yml
+  - distro=ubuntu1804 playbook=web_xml.yml
+  - distro=ubuntu1804 playbook=java_opts.yml
 
 script:
   # Download test shim.
