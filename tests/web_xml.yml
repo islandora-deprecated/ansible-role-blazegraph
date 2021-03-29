@@ -26,5 +26,5 @@
       when: "ansible_os_family == 'RedHat'"
       java_packages:
         - java-1.8.0-openjdk
-    - role: Islandora-Devops.tomcat8
+    - role: Islandora-Devops.tomcat9
     - role: role_under_test

@@ -8,7 +8,7 @@
     group: "{{ blazegraph_user }}"
   with_items:
     - RWStore.properties
-  notify: restart tomcat8
+  notify: restart tomcat9
 
 - name: Copy blazegraph config files
   copy:
@@ -19,7 +19,7 @@
   with_items:
     - blazegraph.properties
     - inference.nt
-  notify: restart tomcat8
+  notify: restart tomcat9
 
 - name: Drop in templated web.xml file
   template:
@@ -27,5 +27,5 @@
     dest: "{{ blazegraph_webxml_path }}"
     owner: "{{ blazegraph_user }}"
     group: "{{ blazegraph_user }}"
-  notify: restart tomcat8
+  notify: restart tomcat9
   when: blazegraph_webxml_template
